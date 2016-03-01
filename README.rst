@@ -49,6 +49,9 @@ Installation
    tag where you want to display the cookielaw banner. Best place for this is
    your 'base' template, so you will have the cookie banner on every page of
    your website.
+#. If your site is cached, ``{% cookielaw_banner %}`` doesn't work. You should
+   use ``{% cookielaw_banner_js_mode %}`` template tag that works only with
+   javascript.
 
 Configuration
 =============

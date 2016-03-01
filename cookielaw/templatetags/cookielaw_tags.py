@@ -13,3 +13,7 @@ def cookielaw_banner(context):
         return ''
     return render_to_string('cookielaw/banner.html', context)
 
+
+@register.inclusion_tag('cookielaw/banner.html')
+def cookielaw_banner_js_mode():
+    return {'js_mode': True}
