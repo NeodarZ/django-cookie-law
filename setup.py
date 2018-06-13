@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
 import os
-from setuptools import setup, find_packages
-from itertools import chain
-from glob import glob
-
 import cookielaw
+
+from setuptools import setup, find_packages
 
 
 CLASSIFIERS = [
@@ -38,7 +36,7 @@ setup(
         'selenium>=2.32.0',
     ],
     packages=find_packages(),
-    zip_safe = False,
-    test_suite = 'runtests.main',
-    include_package_data = True,   
+    zip_safe=False,
+    test_suite='runtests.main',
+    include_package_data=True,
 )
