@@ -11,7 +11,7 @@ register = template.Library()
 def cookielaw_banner(context):
     if context['request'].COOKIES.get('cookielaw_accepted', False):
         return ''
-    return render_to_string('cookielaw/banner.html', context)
+    return render_to_string('cookielaw/banner.html', dict(context))
 
 
 @register.inclusion_tag('cookielaw/banner.html')
