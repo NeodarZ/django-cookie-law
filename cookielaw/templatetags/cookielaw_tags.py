@@ -11,7 +11,11 @@ register = template.Library()
 def cookielaw_banner(context):
     if context['request'].COOKIES.get('cookielaw_accepted', False):
         return ''
-    return render_to_string('cookielaw/banner.html', dict(context))
+    try:
+        return render_to_string('cookielaw/banner.html', context)
+    except TypeError:
+        # from django 1.11 context needs to be a dictionary
+        return render_to_string('cookielaw/banner.html', context.__dict__)
 
 
 @register.inclusion_tag('cookielaw/banner.html')
