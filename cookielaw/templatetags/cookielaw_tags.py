@@ -3,6 +3,7 @@
 from django import template
 from django.template.loader import render_to_string
 
+from cookielaw.models import CookieLawBanner
 
 register = template.Library()
 
@@ -11,6 +12,9 @@ register = template.Library()
 def cookielaw_banner(context):
     if context['request'].COOKIES.get('cookielaw_accepted', False):
         return ''
+    # Stop use fucked up context value
+    context = {}
+    context['cookielawbanner'] = CookieLawBanner.objects.first()
     try:
         return render_to_string('cookielaw/banner.html', context)
     except TypeError:
