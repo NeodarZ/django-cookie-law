@@ -20,8 +20,3 @@ def cookielaw_banner(context):
     except TypeError:
         # from django 1.11 context needs to be a dictionary
         return render_to_string('cookielaw/banner.html', context.__dict__)
-
-
-@register.inclusion_tag('cookielaw/banner.html')
-def cookielaw_banner_js_mode():
-    return {'js_mode': True}
