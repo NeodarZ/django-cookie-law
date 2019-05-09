@@ -12,6 +12,10 @@ var Cookielaw = {
         document.cookie = name + "=" + value + expires + "; path=/";
     },
 
+    eraseCookie: function(name) {
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
+    },
+
     getCookie: function(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
