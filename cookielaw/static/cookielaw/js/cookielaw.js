@@ -30,18 +30,14 @@ var Cookielaw = {
     createCookielawCookie: function () {
         this.createCookie('cookielaw_accepted', '1', 1 * 365);
 
-        if (typeof (window.jQuery) === 'function') {
-            jQuery('#CookielawBanner').slideUp();
-        } else {
-            document.getElementById('CookielawBanner').style.display = 'none';
-        }
+        document.getElementById('CookielawBanner').style.display = 'none';
     }
 
 };
 
 /* Js mode */
 document.addEventListener("DOMContentLoaded", function(event) { 
-    var el = document.querySelector("#CookielawBanner.BannerJsMode");
+    var el = document.querySelector("#CookielawBanner");
     if (el) {
         if (!Cookielaw.getCookie("cookielaw_accepted")) {
             el.style.display = "block";
